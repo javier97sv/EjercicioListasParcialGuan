@@ -176,13 +176,14 @@
 
 
             <Button
-                android:layout_gravity="center"
+                android:onClick="OnClickElegirCategoria"
                 android:id="@+id/btnMenu"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_width="fill_parent"
-                android:text="@string/msgSig"
-                android:layout_height="wrap_content" />
+                android:text="@string/msgSig" />
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
