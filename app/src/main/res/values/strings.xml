@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Ejercicio Listas Parcial Guan</string>
+    <string name="msgEncuestar">Encuestar</string>
+    <string name="msgProcesar">Procesar</string>
+    <string name="tituloInfo">Encuesta</string>
+    <string name="msgGenero">Género:</string>
+    <string name="rMascu">Masculino</string>
+    <string name="rFeme">Femenino</string>
+    <string name="msgEdad">Edad:</string>
+    <string name="msgUbicacion">Ubicación:</string>
+    <string name="msgSig">Siguiente</string>
+    <string name="tituloCate">Categorías de comidas</string>
+    <string name="msgCate">Seleccione una categoría</string>
+    <string name="rCarnes">Carnes</string>
+    <string name="rEnsa">Ensaladas</string>
+    <string name="rPasta">Pastas</string>
+    <string name="tituloLista">Lista de comida</string>
+</resources>
