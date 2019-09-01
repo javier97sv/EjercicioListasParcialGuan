@@ -41,12 +41,12 @@ public class ListaComida extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, final int position, long id) {
                 if(position >= 0 && position < listComida.size()){
-                    new AlertDialog.Builder(ListaComida.this).setTitle("¡Aviso!").setMessage("¿Desea seleccionar el plato \"" + listComida.get(position) + "\"?")
+                    new AlertDialog.Builder(ListaComida.this).setTitle("¡Aviso!").setMessage("¿Desea seleccionar el plato \"" + listComida.get(position + num1()) + "\"?")
                             .setNegativeButton(android.R.string.cancel, null)
                             .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {// Agregamos y cerramos
-                                    listComidaSeleccionada.add(listComida.get(position));
+                                    listComidaSeleccionada.add(listComida.get(position + num1()));
                                     finish();
                                 }
                             }).show();
