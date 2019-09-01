@@ -15,4 +15,5 @@
     <string name="rEnsa">Ensaladas</string>
     <string name="rPasta">Pastas</string>
     <string name="tituloLista">Lista de comida</string>
+    <string name="msgComida">Comida</string>
 </resources>

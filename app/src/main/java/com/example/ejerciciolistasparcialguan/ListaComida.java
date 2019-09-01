@@ -4,17 +4,17 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import Entidades.InfoOrden;
 
 import static com.example.ejerciciolistasparcialguan.MainActivity.listComida;
-import static com.example.ejerciciolistasparcialguan.MainActivity.listComidaSeleccionada;
+import static com.example.ejerciciolistasparcialguan.MainActivity.listOrden;
 
 public class ListaComida extends AppCompatActivity {
 
@@ -46,7 +46,7 @@ public class ListaComida extends AppCompatActivity {
                             .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {// Agregamos y cerramos
-                                    listComidaSeleccionada.add(listComida.get(position + num1()));
+                                    AddItemListaOrden(listComida.get(position + num1()));
                                     finish();
                                 }
                             }).show();
@@ -109,5 +109,20 @@ public class ListaComida extends AppCompatActivity {
             n = 9;
         }
         return n;
+    }
+
+    private void AddItemListaOrden(String c){
+        InfoOrden io = new InfoOrden();
+        Bundle b = getIntent().getExtras();
+
+        String e = b.getString("eda");
+        String g = b.getString("gener");
+        String u = b.getString("ubicacio");
+
+        io.SetEdad(e);
+        io.SetGenero(g);
+        io.SetUbicacion(u);
+        io.SetComida(c);
+        listOrden.add(io);
     }
 }

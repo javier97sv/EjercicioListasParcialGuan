@@ -9,10 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 
-import static com.example.ejerciciolistasparcialguan.MainActivity.listEdad;
-import static com.example.ejerciciolistasparcialguan.MainActivity.listGenero;
-import static com.example.ejerciciolistasparcialguan.MainActivity.listUbicacion;
-
 public class InfoPersonal extends AppCompatActivity {
 
     RadioButton rFemenino, rMasculino;
@@ -30,6 +26,7 @@ public class InfoPersonal extends AppCompatActivity {
     }
 
     public void OnClickElegirCategoria(View v){
+        Intent in = new Intent(this, Categoria.class);
         if(rFemenino.isChecked() || rMasculino.isChecked()){
             if(edtEdad.getText().toString().isEmpty() && edtUbicacion.getText().toString().isEmpty()){
                 new AlertDialog.Builder(this).setTitle("¡Aviso!").setMessage("Ingrese la edad y la ubicación").show();
@@ -39,14 +36,14 @@ public class InfoPersonal extends AppCompatActivity {
                 new AlertDialog.Builder(this).setTitle("¡Aviso!").setMessage("Ingrese la ubicación").show();
             } else{
                 if(rFemenino.isChecked()){
-                    listGenero.add("Femenino");
+                    in.putExtra("genero", "Femenino");
                 } else{
-                    listGenero.add("Masculino");
+                    in.putExtra("genero", "Masculino");
                 }
-                listEdad.add(edtEdad.getText().toString());
-                listUbicacion.add((edtUbicacion.getText().toString()));
 
-                Intent in = new Intent(this, Categoria.class);
+                in.putExtra("edad", edtEdad.getText().toString());
+                in.putExtra("ubicacion", edtUbicacion.getText().toString());
+
                 startActivity(in);
 
                 finish();
