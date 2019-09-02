@@ -58,7 +58,7 @@ public class ListaComida extends AppCompatActivity {
                             .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {// Agregamos y cerramos
-                                    AddItemListaOrden(listComida.get(position + num1()), img[position]);
+                                    AddItemListaOrden(listComida.get(position + num1()), img[position + num1()]);
                                     finish();
                                 }
                             }).show();
