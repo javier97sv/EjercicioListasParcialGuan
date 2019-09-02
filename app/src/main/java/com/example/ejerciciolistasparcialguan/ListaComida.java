@@ -18,6 +18,18 @@ import static com.example.ejerciciolistasparcialguan.MainActivity.listOrden;
 
 public class ListaComida extends AppCompatActivity {
 
+    int[] img = {
+            R.drawable.img01,
+            R.drawable.img02,
+            R.drawable.img03,
+            R.drawable.img04,
+            R.drawable.img05,
+            R.drawable.img06,
+            R.drawable.img07,
+            R.drawable.img08,
+            R.drawable.img09
+    };
+
     private ListView lstvComida;
     TextView txTitulo;
 
@@ -46,7 +58,7 @@ public class ListaComida extends AppCompatActivity {
                             .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {// Agregamos y cerramos
-                                    AddItemListaOrden(listComida.get(position + num1()));
+                                    AddItemListaOrden(listComida.get(position + num1()), img[position]);
                                     finish();
                                 }
                             }).show();
@@ -111,7 +123,7 @@ public class ListaComida extends AppCompatActivity {
         return n;
     }
 
-    private void AddItemListaOrden(String c){
+    private void AddItemListaOrden(String c, int im){
         InfoOrden io = new InfoOrden();
         Bundle b = getIntent().getExtras();
 
@@ -123,6 +135,7 @@ public class ListaComida extends AppCompatActivity {
         io.SetGenero(g);
         io.SetUbicacion(u);
         io.SetComida(c);
+        io.SetImg(im);
         listOrden.add(io);
     }
 }

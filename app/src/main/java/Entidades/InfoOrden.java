@@ -6,6 +6,7 @@ public class InfoOrden {
     private String edad;
     private String ubicacion;
     private String comida;
+    private int img;
 
     //Declaramos los metodos de acceso
     public void SetGenero(String value){
@@ -31,5 +32,11 @@ public class InfoOrden {
     }
     public String GetComida(){
         return this.comida;
+    }
+    public void SetImg(int value){
+        this.img = value;
+    }
+    public int GetImg(){
+        return this.img;
     }
 }
